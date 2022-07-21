@@ -1,23 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import Navbar from './components/Navbar';
+import Calculator from './components/Calculator'
 
 function App() {
+  
+  const navText = prompt("Please enter your name:");
+  let name = null;
+  if (navText == null || navText === "") {
+    name = "Body";
+  } else {
+    name = navText;
+  }
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar name={name}/>
+      <Calculator />
     </div>
   );
 }
